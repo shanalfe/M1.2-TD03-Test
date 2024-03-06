@@ -1,11 +1,17 @@
 
 class CartePizzeria():
+    
     def __init__(self):
         self.pizzas = []
 
     def is_empty(self):
-        if len(self.pizzas):
+        if len(self.pizzas) == 0:
+            return True
+        elif len(self.pizzas) > 0:
             return False
+        
+    def add_pizza(self, pizza):
+        self.pizzas.append(pizza)
         
     def nb_pizzas(self):
         return len(self.pizzas)
@@ -17,5 +23,6 @@ class CartePizzeria():
         except ValueError:
             raise CartePizzeriaException("Pas de pizza de ce nom")
          
+
 class CartePizzeriaException(Exception):
-    print("Erreur dans la carte de la pizzeria")
+    pass
